@@ -9,7 +9,6 @@ const TodoItem = ({todo, changeTodo, removeTodo}) => {
     return (
         <div 
         className='flex items-center justify-between mb-2 rounded-2xl bg-gray-800 p-5 w-full'
-        
         >
         <button 
             className='flex items-center' 

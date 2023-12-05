@@ -31,8 +31,10 @@ const Home = () => {
         setTodos(copy)
     }
 
-    const removeTodo = (_id) =>
+    const removeTodo = (_id) => 
+    {
         setTodos ([...todos].filter(t=>t._id !== _id))
+    }
   
     return (
         <div className='text-white w-4/5 mx-auto'>
