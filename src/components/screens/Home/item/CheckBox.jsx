@@ -17,5 +17,4 @@ const CheckBox = ({isCompleted}) => {
         </div>
     )
 }
-
 export default CheckBox;
