@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 import cn from 'classnames';
 import {FaRegTrashAlt} from 'react-icons/fa';
 import {FaRegEdit} from 'react-icons/fa';
-import { IoSaveOutline } from "react-icons/io5";
 import {useDispatch} from 'react-redux';
 import {deleteTodo, updateTodo} from '../../../../app/features/todosSlice';
 
@@ -32,7 +31,7 @@ const TodoItem = ({todo}) => {
 		return (
 			<div className='mb-2 rounded-2xl bg-gray-800 p-5 w-full'>
 				<form onSubmit={handleSubmit} className='flex items-center justify-between'>
-					<input className='flex items-center justify-between mb-2 bg-gray-800 rounded-2xl px-5 py-3 w-full mr-2'
+					<input
 						type='text'
 						onChange={(e) => setTitle(e.target.value)}
 						value={title}
@@ -40,7 +39,7 @@ const TodoItem = ({todo}) => {
 					<div className='flex space-x-4'>
 						<button type="submit">
 							{/* icon save */}
-							<IoSaveOutline
+							<FaRegTrashAlt
 								size={22}
 								className='text-gray-900 hover:text-pink-400 transition-colors ease-in-out duration-300'
 							/>

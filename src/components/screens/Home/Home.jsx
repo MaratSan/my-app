@@ -1,57 +1,27 @@
-import React, {useState} from 'react'
-import TodoItem from './item/TodoItem'
-import CreateTodoField from './createTodoField/CreateTodoField'
-
-
-const data = [{
-    _id:'sdjkhfbv',
-    title: 'Finish',
-    isCompleted: false,
-},
-{
-    _id:'bgfd',
-    title: 'Read next',
-    isCompleted: false,
-},
-{
-    _id:'nhgf',
-    title: 'Send the finish',
-    isCompleted: false,
-},
-]
+import React, {useState} from 'react';
+import TodoItem from './item/TodoItem';
+import CreateTodoForm from './createTodoField/CreateTodoForm';
+import {useSelector} from 'react-redux';
 
 const Home = () => {
-    const [todos, setTodos] = useState(data)
+	const todos = useSelector(state => state.todos);
 
-    const changeTodo = (_id) =>
-    {
-        const copy =[...todos]
-        const current = copy.find (t => t._id === _id)
-        current.isCompleted = !current.isCompleted
-        setTodos(copy)
-    }
+	return (
+		<div className='text-white w-4/5 mx-auto'>
+			<h1 className='font-bold text-center mb-8'>
+				Todo Marat
+			</h1>
+			<CreateTodoForm />
+			<div className="mt-5">
+				{todos.map(todo =>
+					<TodoItem
+						key={todo._id}
+						todo={todo}
+					/>
+				)}
+			</div>
+		</div>
+	);
+};
 
-    const removeTodo = (_id) => 
-    {
-        setTodos ([...todos].filter(t=>t._id !== _id))
-    }
-  
-    return (
-        <div className='text-white w-4/5 mx-auto'>
-        <h1 className='font-bold text-center mb-8'>
-            Todo Marat
-        </h1>
-        {todos.map(todo => (
-        <TodoItem 
-                key={todo.id} 
-                todo={todo} 
-                changeTodo={changeTodo}
-                removeTodo={removeTodo}
-                />
-        ))}
-        <CreateTodoField setTodos={setTodos}/>
-        </div>
-    )
-}
-
-export default Home
+export default Home;
