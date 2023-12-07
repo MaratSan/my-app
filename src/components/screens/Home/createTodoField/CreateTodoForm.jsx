@@ -1,37 +1,37 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
 
-const CreateTodoField = ({setTodos}) => {
+const CreateTodoForm = ({setTodos}) => {
     const [title, setTitle] = useState('')
 
-    const addTodo = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setTodos ((prev) => [
-                 {
-                 _id: new Date(),
-                 title,
-                 isCompleted: false,
-                 },
-                 ...prev,
-             ]);
-        
+        setTodos((prev) => [
+            {
+                _id: new Date(),
+                title,
+                isCompleted: false,
+            },
+            ...prev,
+        ]);
+
         setTitle(" ");
     }
 
     return (
-        <form 
-            onSubmit={addTodo}
+        <form
+            onSubmit={handleSubmit}
             className='flex items-center justify-between mb-2 rounded-2xl border-gray-800 border-2 px-5 py-3 w-full mt-20'
-            >
-            <input 
+        >
+            <input
                 type="text"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
                 className='bg-transparent w-full border-none outline-none'
                 placeholder='Add a task'
             />
-            <input type='submit' className='hidden' />
-            </form>
+            <input type='submit' className='hidden'/>
+        </form>
     );
 };
 
