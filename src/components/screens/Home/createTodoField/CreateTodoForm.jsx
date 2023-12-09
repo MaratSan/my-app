@@ -18,6 +18,8 @@ const CreateTodoForm = () => {
 				isCompleted: false
 			}
 		));
+
+
 		setTitle('');
 	};
 
@@ -32,7 +34,7 @@ const CreateTodoForm = () => {
 				onChange={(e) => setTitle(e.target.value)}
 				value={title}
 				className='bg-transparent w-full border-none outline-none'
-				placeholder='Add a task'
+				placeholder=''
 			/>
 			<input type='submit' className='hidden' />
 		</form>
