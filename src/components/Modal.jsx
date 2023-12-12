@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { IoSaveOutline } from 'react-icons/io5';
 import { IoCloseOutline } from "react-icons/io5";
 
-
+//just to be sure
 const Modal = ({ isOpen, onClose, onSave, todo }) => {
 	const [newTitle, setNewTitle] = useState('');
 
