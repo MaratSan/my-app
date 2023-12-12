@@ -1,4 +1,4 @@
-import React, from 'react';
+import React from 'react';
 import CreateTodoForm from '../modules/CreateTodoForm';
 import TodoList from '../modules/TodoList';
 
