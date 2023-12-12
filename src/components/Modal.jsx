@@ -1,12 +1,10 @@
-// Modal.jsx
 import React, { useState, useEffect } from 'react';
 import { IoSaveOutline } from 'react-icons/io5';
 import { IoCloseOutline } from "react-icons/io5";
-import TodoItem from '../screens/Home/item/TodoItem';
+
 
 const Modal = ({ isOpen, onClose, onSave, todo }) => {
 	const [newTitle, setNewTitle] = useState('');
-	//const [initialTitle, setInitialTitle] = useState('')
 
 	useEffect(() => {
 		if (isOpen) {

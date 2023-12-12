@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Home from '../src/components/screens/Home/Home';
-import Layout from './components/layout/Layout';
+import Home from './pages/Home';
+import Layout from './layouts/Layout';
 import {Provider} from 'react-redux';
 import {store} from './app/store';
 

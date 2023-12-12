@@ -20,12 +20,15 @@ export const todosSlice = createSlice({
 	  }
 	],
 	reducers: {
-	  createTodo: (state, action) => {
-		state.unshift({
-		  ...action.payload,
-		  _id: Date.now()
-		});
-	  },
+		createTodo: (state, action) => {
+			return [
+			  {
+				_id: Date.now(),
+				...action.payload,
+			  },
+			  ...state
+			];
+		  },
 	  updateTodo: (state, action) => {
 		return state.map((todo) =>
 		  todo._id === action.payload._id ? action.payload : todo
