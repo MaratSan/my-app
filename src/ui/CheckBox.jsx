@@ -18,4 +18,4 @@ const CheckBox = ({isCompleted}) => {
     )
 }
 export default CheckBox;
-//checked
+//checked 
