@@ -1,11 +1,11 @@
-import CheckBox from './CheckBox';
+import CheckBox from '../ui/CheckBox';
 import React, { useState } from 'react';
 import cn from 'classnames';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import { FaRegEdit } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
-import { deleteTodo, updateTodo } from '../../../../app/features/todosSlice';
-import Modal from '../../../modal/Modal';
+import { deleteTodo, updateTodo } from '../app/features/todosSlice';
+import Modal from './Modal';
 
 const TodoItem = ({ todo }) => {
 	const dispatch = useDispatch();
