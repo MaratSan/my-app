@@ -10,7 +10,7 @@ import Modal from './Modal';
 const TodoItem = ({ todo }) => {
 	const dispatch = useDispatch();
 	const [isModalOpen, setModalOpen] = useState(false);
-	const [newTitle, setNewTitle] = useState(todo.title);
+	//const [newTitle, setNewTitle] = useState(todo.title);
 
 	const handleEditClick = () => {
 		setModalOpen(true);
